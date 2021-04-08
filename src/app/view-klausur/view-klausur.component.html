@@ -1,0 +1,33 @@
+<div class="body">
+    <div class="studiengang">
+        <mat-form-field appearance="fill">
+        <mat-label>Studiengang</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let studiengang of studiengaenge" [value]="studiengang">
+            {{studiengang}}
+            </mat-option>
+        </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="studiengang">
+        <mat-form-field appearance="fill">
+        <mat-label>Semester</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let semester of semesters" [value]="semester">
+            {{semester}}
+            </mat-option>
+        </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="studiengang">
+        <mat-form-field appearance="fill">
+        <mat-label>Modul</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let modul of moduls" [value]="modul">
+            {{modul}}
+            </mat-option>
+        </mat-select>
+        </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" class="btn" disabled=true>Klausuren Anfordern</button>
+</div>

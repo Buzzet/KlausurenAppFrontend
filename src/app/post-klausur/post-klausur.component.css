@@ -1,0 +1,31 @@
+.body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.studiengang{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+mat-form-field {
+    width: 100%;
+}
+.btn{
+    width: 70%;
+}
+
+.uploadBtn{
+    height: 70px;
+    width: 70px;
+    font-size: 70px;
+}
+
+mat-icon{
+    font-size: 70px;
+}
