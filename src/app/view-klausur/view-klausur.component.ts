@@ -10,7 +10,7 @@ export class ViewKlausurComponent implements OnInit {
   constructor() { }
 
 studiengaenge: String[] = ['Wirtschaftsinformatik', 'Betriebswirtschaftslehre', 'Angewante Informatik'];
-semesters: String[] = ['Semester 1', 'Semester 2', 'Semester 3'];
+semesters: String[] = ['Semester 1', 'Semester 2', 'Semester 3', 'Semester 4'];
 moduls: String[] = ['PM2', 'IN2', 'SEA'];
   ngOnInit(): void {
   }
