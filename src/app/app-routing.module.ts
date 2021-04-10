@@ -6,7 +6,7 @@ import { ViewKlausurComponent } from './view-klausur/view-klausur.component';
 const routes: Routes = [
   { path: 'view', component: ViewKlausurComponent},
   { path: 'post', component: PostKlausurComponent},
-  {path: '*', component: ViewKlausurComponent}
+  {path: '**', component: ViewKlausurComponent}
 ];;
 
 @NgModule({
