@@ -12,6 +12,10 @@ import { ViewKlausurComponent } from './view-klausur/view-klausur.component';
 import { PostKlausurComponent } from './post-klausur/post-klausur.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
+import { LoginComponent } from './login/login.component';
+import {MatInputModule} from '@angular/material/input';
+import { RegisterComponent } from './register/register.component';
+
 
 
 @NgModule({
@@ -21,7 +25,9 @@ import {MatButtonModule} from '@angular/material/button';
     HeaderComponent,
     UserInterfaceComponent,
     ViewKlausurComponent,
-    PostKlausurComponent
+    PostKlausurComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +35,8 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserAnimationsModule,
     MatIconModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

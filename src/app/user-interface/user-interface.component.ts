@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterGuardService } from '../services/router-guard.service';
 
 @Component({
   selector: 'app-user-interface',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserInterfaceComponent implements OnInit {
 
-  constructor() { }
+  constructor(public routerGuard: RouterGuardService) { }
 
   ngOnInit(): void {
   }
