@@ -15,7 +15,10 @@ import {MatButtonModule} from '@angular/material/button';
 import { LoginComponent } from './login/login.component';
 import {MatInputModule} from '@angular/material/input';
 import { RegisterComponent } from './register/register.component';
-
+import { FormsModule } from '@angular/forms';
+import { RegisterEmailSendComponent } from './register-email-send/register-email-send.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RegisterPasswordComponent } from './register-password/register-password.component';
 
 
 @NgModule({
@@ -27,7 +30,9 @@ import { RegisterComponent } from './register/register.component';
     ViewKlausurComponent,
     PostKlausurComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    RegisterEmailSendComponent,
+    RegisterPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +41,9 @@ import { RegisterComponent } from './register/register.component';
     MatIconModule,
     MatSelectModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
