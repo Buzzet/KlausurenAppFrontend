@@ -10,15 +10,15 @@ export class RegisterPasswordComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) { }
 
-  email: String = "";
+  email: string;
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
-      this.email = params['email'];
-      console.log(this.email)
+      this.email = atob(params.email);
+      console.log(this.email);
     });
   }
 
-  onClickRegister(){}
+  onClickRegister(): void{}
 
 }
