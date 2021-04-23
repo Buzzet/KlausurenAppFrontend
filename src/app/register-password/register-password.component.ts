@@ -11,6 +11,7 @@ export class RegisterPasswordComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   email: string;
+  hide: boolean = true;
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {

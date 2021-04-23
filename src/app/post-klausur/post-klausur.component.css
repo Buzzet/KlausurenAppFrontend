@@ -24,8 +24,21 @@ mat-form-field {
     height: 70px;
     width: 70px;
     font-size: 70px;
+    margin-bottom: 20px;
 }
 
-mat-icon{
+.uploadIcon{
     font-size: 70px;
+}
+
+.custom-file-upload {
+   display: inline-block;
+   padding: 6px 12px;
+   cursor: pointer;
+ }
+
+.files{
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
 }

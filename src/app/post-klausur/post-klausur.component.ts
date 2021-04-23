@@ -8,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class PostKlausurComponent implements OnInit {
 
   constructor() { }
-  studiengaenge: String[] = ['Wirtschaftsinformatik', 'Betriebswirtschaftslehre', 'Angewante Informatik'];
-  semesters: String[] = ['Semester 1', 'Semester 2', 'Semester 3'];
-  moduls: String[] = ['PM2', 'IN2', 'SEA'];
+  studiengaenge: string[] = ['Wirtschaftsinformatik', 'Betriebswirtschaftslehre', 'Angewante Informatik'];
+  semesters: string[] = ['Semester 1', 'Semester 2', 'Semester 3'];
+  moduls: string[] = ['PM2', 'IN2', 'SEA'];
   ngOnInit(): void {
   }
 
+  onFileInput(files: FileList): void {
+    console.log(files);
+  }
 }

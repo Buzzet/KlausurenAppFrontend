@@ -30,7 +30,16 @@
         </mat-form-field>
     </div>
     <div class="uploadBtn">
-        <mat-icon >upload_file</mat-icon>
+      <label for="file-upload" class="custom-file-upload">
+        <mat-icon class="uploadIcon">upload_file</mat-icon>
+      </label>
+      <input id="file-upload" type="file" #fileInput (change)="onFileInput(fileInput.files)" style="display: none;"/>
     </div>
+  <div *ngIf="fileInput.files.length > 0" class="files">
+    <p>{{fileInput.files.item(0).name}}</p>
+    <button mat-icon-button color="warn" >
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
     <button mat-raised-button color="primary" class="btn" disabled=true>Klausur Hochladen</button>
 </div>

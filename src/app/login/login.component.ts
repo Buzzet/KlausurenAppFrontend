@@ -8,6 +8,7 @@ import { RouterGuardService } from '../services/router-guard.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  hide: boolean = true;
 
   constructor(public router: Router, public routerGuard: RouterGuardService) { }
 
