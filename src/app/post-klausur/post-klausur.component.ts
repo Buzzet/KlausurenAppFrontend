@@ -16,7 +16,10 @@ export class PostKlausurComponent implements OnInit {
   }
 
   onFileInput(files: FileList): void {
-    this.httpClient.post('http://localhost:8089/test/klausurUpload', files.item(0)).subscribe(resp => {
+    let body: any = {
+      pdf: files.item(0);
+    };
+    this.httpClient.post('http://localhost:8089/test/klausurUpload', body.toJSON()).subscribe(resp => {
       console.log(resp);
     });
   }
