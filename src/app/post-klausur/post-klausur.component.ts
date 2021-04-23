@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-post-klausur',
@@ -16,9 +16,14 @@ export class PostKlausurComponent implements OnInit {
   }
 
   onFileInput(files: FileList): void {
+
+    const headers = new HttpHeaders();
+// this is the important step. You need to set content type as null
+    headers.set('Content-Type', null);
+    headers.set('Accept', 'multipart/form-data');
     const formData: FormData = new FormData();
     formData.append('fileArray', files[0], files[0].name);
-    this.httpClient.post('http://localhost:8089/test/klausurUpload', formData).subscribe(resp => {
+    this.httpClient.post('http://localhost:8089/test/klausurUpload', formData, {headers}).subscribe(resp => {
       console.log(resp);
     });
   }
