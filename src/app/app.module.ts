@@ -32,7 +32,7 @@ import { RegisterPasswordComponent } from './register-password/register-password
     LoginComponent,
     RegisterComponent,
     RegisterEmailSendComponent,
-    RegisterPasswordComponent
+    RegisterPasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +43,7 @@ import { RegisterPasswordComponent } from './register-password/register-password
     MatButtonModule,
     MatInputModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

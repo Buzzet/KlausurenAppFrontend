@@ -41,5 +41,5 @@
       <mat-icon>delete</mat-icon>
     </button>
   </div>
-    <button mat-raised-button color="primary" class="btn" disabled=true>Klausur Hochladen</button>
+    <button mat-raised-button color="primary" class="btn" [disabled]="btnKlausurDisable" (click)="upload()">Klausur Hochladen</button>
 </div>

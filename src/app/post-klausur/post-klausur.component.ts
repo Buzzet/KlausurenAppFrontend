@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpEventType, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { KlausurenService } from '../services/klausuren.service';
 
 @Component({
   selector: 'app-post-klausur',
@@ -7,8 +8,10 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
   styleUrls: ['./post-klausur.component.css']
 })
 export class PostKlausurComponent implements OnInit {
-
-  constructor(public httpClient: HttpClient) { }
+  progress;
+  files = undefined;
+  btnKlausurDisable = true;
+  constructor(public klausurenService: KlausurenService) { }
   studiengaenge: string[] = ['Wirtschaftsinformatik', 'Betriebswirtschaftslehre', 'Angewante Informatik'];
   semesters: string[] = ['Semester 1', 'Semester 2', 'Semester 3'];
   moduls: string[] = ['PM2', 'IN2', 'SEA'];
@@ -16,15 +19,21 @@ export class PostKlausurComponent implements OnInit {
   }
 
   onFileInput(files: FileList): void {
+    this.btnKlausurDisable = false;
+    this.files = files;
+  }
 
-    const headers = new HttpHeaders();
-// this is the important step. You need to set content type as null
-    headers.set('Content-Type', null);
-    headers.set('Accept', 'multipart/form-data');
-    const formData: FormData = new FormData();
-    formData.append('fileArray', files[0], files[0].name);
-    this.httpClient.post('http://localhost:8089/test/klausurUpload', formData, {headers}).subscribe(resp => {
-      console.log(resp);
-    });
+  upload() {
+    console.log(this.files)
+    let response = this.klausurenService.uploadKlausur(this.files);
+    response.subscribe(event => {
+      console.log(event)
+      if (event.type === HttpEventType.UploadProgress) {
+        this.progress.percentage = Math.round(100 * event.loaded / event.total);
+        console.log(this.progress)
+      } else if (event instanceof HttpResponse) {
+        alert('File Successfully Uploaded');
+      }
+    })
   }
 }

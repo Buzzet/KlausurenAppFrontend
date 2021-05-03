@@ -15,4 +15,8 @@ moduls: String[] = ['PM2', 'IN2', 'SEA'];
   ngOnInit(): void {
   }
 
+  getKlausur(){
+
+  }
+
 }
