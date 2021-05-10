@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpEventType, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { KlausurenService } from '../services/klausuren.service';
+import { KlausurenService } from '../../services/klausuren.service';
 
 @Component({
   selector: 'app-post-klausur',
@@ -23,17 +23,17 @@ export class PostKlausurComponent implements OnInit {
     this.files = files;
   }
 
-  upload() {
-    console.log(this.files)
-    let response = this.klausurenService.uploadKlausur(this.files);
+  upload(): void{
+    console.log(this.files);
+    const response = this.klausurenService.uploadKlausur(this.files);
     response.subscribe(event => {
-      console.log(event)
+      console.log(event);
       if (event.type === HttpEventType.UploadProgress) {
         this.progress.percentage = Math.round(100 * event.loaded / event.total);
-        console.log(this.progress)
+        console.log(this.progress);
       } else if (event instanceof HttpResponse) {
         alert('File Successfully Uploaded');
       }
-    })
+    });
   }
 }

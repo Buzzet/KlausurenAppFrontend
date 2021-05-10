@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RouterGuardService } from '../services/router-guard.service';
+import { RouterGuardService } from '../../../services/router-guard.service';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +8,7 @@ import { RouterGuardService } from '../services/router-guard.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  hide: boolean = true;
+  hide = true;
 
   constructor(public router: Router, public routerGuard: RouterGuardService) { }
 

@@ -4,20 +4,16 @@
      display: flex;
      align-items: center;
      flex-direction: column;
- }   
+ }
 
  .logo{
-     height: 17vh;
+     height: 18vh;
      width: 80vw;
      background-color: #004C99;
      border-radius: 10px;
      display: flex;
      justify-content: center;
      align-items: center;
- }
-
- svg{
-     width: 70vw;
  }
 
   .credentials{
@@ -28,10 +24,15 @@
 
   .loginInput{
       width: 100%;
-  
+
    }
 
    button{
        width: 80vw;
        height: 6vh;
+   }
+
+   .logoHAW{
+     width: 70%;
+     max-height: 90%;
    }

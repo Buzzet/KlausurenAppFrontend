@@ -1,20 +1,18 @@
-<div class="body">
-    <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_back</mat-icon>
-    <div class="logo">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="194px" height="50px"
-            viewBox="0 0 330 85" overflow="visible" enable-background="" xml:space="preserve">
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="194px" height="50px"
+     viewBox="0 0 330 85" overflow="visible" enable-background="" xml:space="preserve">
             <defs>
             </defs>
-            <rect y="0.116" fill="#FFFFFF" width="62.362" height="5.669" />
-            <rect y="22.793" fill="#FFFFFF" width="62.362" height="5.669" />
-            <rect y="45.47" fill="#FFFFFF" width="62.362" height="5.67" />
-            <rect y="68.147" fill="#FFFFFF" width="62.362" height="5.67" />
-            <rect x="22.678" y="11.455" fill="#FFFFFF" width="62.362" height="5.669" />
-            <rect x="22.678" y="34.132" fill="#FFFFFF" width="62.362" height="5.67" />
-            <rect x="22.678" y="56.81" fill="#FFFFFF" width="62.362" height="5.669" />
-            <rect x="22.678" y="79.486" fill="#FFFFFF" width="62.362" height="5.669" />
-            <path fill="#FFFFFF" d="M207.133,0.116h-5.91l-3.604,15.464c-0.234,0.93-0.492,2.147-0.777,3.653
+  <rect y="0.116" fill="#FFFFFF" width="62.362" height="5.669" />
+  <rect y="22.793" fill="#FFFFFF" width="62.362" height="5.669" />
+  <rect y="45.47" fill="#FFFFFF" width="62.362" height="5.67" />
+  <rect y="68.147" fill="#FFFFFF" width="62.362" height="5.67" />
+  <rect x="22.678" y="11.455" fill="#FFFFFF" width="62.362" height="5.669" />
+  <rect x="22.678" y="34.132" fill="#FFFFFF" width="62.362" height="5.67" />
+  <rect x="22.678" y="56.81" fill="#FFFFFF" width="62.362" height="5.669" />
+  <rect x="22.678" y="79.486" fill="#FFFFFF" width="62.362" height="5.669" />
+  <path fill="#FFFFFF" d="M207.133,0.116h-5.91l-3.604,15.464c-0.234,0.93-0.492,2.147-0.777,3.653
 	c-0.283,1.505-0.49,2.761-0.619,3.769c-0.143-1.047-0.35-2.3-0.621-3.76c-0.27-1.459-0.496-2.545-0.678-3.255l-4.127-15.871h-5.678
 	l-4.127,15.871c-0.246,0.852-0.508,2.051-0.785,3.594c-0.279,1.544-0.455,2.684-0.533,3.421c-0.285-2.093-0.744-4.567-1.377-7.422
 	l-3.623-15.464h-5.91l7.229,28.331h6.82l3.818-14.845c0.168-0.658,0.406-1.76,0.717-3.304c0.311-1.543,0.504-2.664,0.58-3.362
@@ -22,8 +20,8 @@
 	c2.015-6.524,3.236-10.613,3.662-12.266c0.104,0.465,0.273,1.098,0.514,1.898c0.238,0.801,1.309,4.257,3.207,10.367H148.65z
 	 M165.994,28.447L155.955,0h-7.344l-9.999,28.447h6.472l2.054-6.744h10.329l2.055,6.744H165.994z M130.931,0.116h-5.988V11.22
 	h-11.22V0.116h-6.007v28.331h6.007V16.219h11.22v12.229h5.988V0.116z" />
-            <path fill="#FFFFFF"
-                d="M318.152,62.926h5.367v5.91c-1.291,0.259-2.564,0.388-3.816,0.388c-2.404,0-4.234-0.811-5.494-2.432
+  <path fill="#FFFFFF"
+        d="M318.152,62.926h5.367v5.91c-1.291,0.259-2.564,0.388-3.816,0.388c-2.404,0-4.234-0.811-5.494-2.432
 	s-1.891-3.969-1.891-7.044c0-2.945,0.783-5.29,2.346-7.034s3.643-2.616,6.24-2.616c2.234,0,4.387,0.517,6.453,1.551l1.996-4.807
 	c-2.701-1.163-5.504-1.744-8.412-1.744c-4.637,0-8.264,1.279-10.879,3.838c-2.617,2.558-3.926,6.122-3.926,10.696
 	c0,4.702,1.127,8.311,3.383,10.823c2.254,2.512,5.52,3.769,9.795,3.769c1.68,0,3.324-0.119,4.932-0.358
@@ -46,5 +44,3 @@
 	c0.238,0.801,1.309,4.257,3.207,10.366H148.65z M165.994,73.836l-10.039-28.447h-7.344l-9.999,28.447h6.472l2.054-6.744h10.329
 	l2.055,6.744H165.994z M130.931,45.505h-5.988v11.104h-11.22V45.505h-6.007v28.331h6.007V61.608h11.22v12.228h5.988V45.505z" />
         </svg>
-    </div>
-</div>

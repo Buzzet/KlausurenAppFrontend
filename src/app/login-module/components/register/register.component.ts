@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { EMailControllerService } from '../services/e-mail-controller.service';
-import { RegisterService } from '../services/register.service';
+import { EMailControllerService } from '../../services/e-mail-controller.service';
+import { RegisterService } from '../../services/register.service';
 
 @Component({
   selector: 'app-register',
