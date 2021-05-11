@@ -1,4 +1,4 @@
-<div [ngClass]="this.protocol === 'file:' ? 'cordova-ios' : 'body'">
+<div [ngClass]="isIPhoneCordovaApp() ? 'cordova-ios' : 'body'">
     <app-header *ngIf="this.routerGuard.loggedIn"></app-header>
     <div class="router">
         <router-outlet></router-outlet>

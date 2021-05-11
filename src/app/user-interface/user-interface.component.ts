@@ -8,12 +8,17 @@ import { RouterGuardService } from '../services/router-guard.service';
 })
 export class UserInterfaceComponent implements OnInit {
 
-  protocol = '';
 
   constructor(public routerGuard: RouterGuardService) { }
 
   ngOnInit(): void {
-    this.protocol = document.location.protocol;
+  }
+
+  isIPhoneCordovaApp(): boolean{
+    if (document.location.protocol === 'file:' && navigator.userAgent.toLocaleLowerCase().indexOf('iphone') !== -1){
+      return true;
+    }
+    return false;
   }
 
 }

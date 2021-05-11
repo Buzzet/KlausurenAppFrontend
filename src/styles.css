@@ -14,6 +14,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  touch-action: manipulation;
 }
 
 input {
@@ -22,4 +23,7 @@ input {
   -moz-user-select: auto !important;
   -ms-user-select: auto !important;
   user-select: auto !important;
+}
+.disable-dbl-tap-zoom {
+  touch-action: manipulation;
 }
