@@ -1,7 +1,8 @@
-<div class="body">
+<div [ngClass]="this.protocol === 'file:' ? 'cordova-ios' : 'body'">
     <app-header *ngIf="this.routerGuard.loggedIn"></app-header>
     <div class="router">
         <router-outlet></router-outlet>
     </div>
     <app-tabs *ngIf="this.routerGuard.loggedIn"></app-tabs>
+    <div class="ios-lower"  *ngIf="this.routerGuard.loggedIn"></div>
 </div>
