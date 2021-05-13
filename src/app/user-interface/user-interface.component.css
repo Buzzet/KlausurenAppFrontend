@@ -10,9 +10,28 @@ app-header{
 }
 
 app-tabs{
-    grid-row: 3;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 70px;
+}
+
+/* Fixing bottom on iOS*/
+
+.ios-lower{
+  grid-row: 3;
+  width: 100%;
+  height: 100%;
+  background-color: #333333;
 }
 
 .router{
     grid-row:2;
+}
+.cordova-ios{
+  display:grid;
+  height: 100vh;
+  width: 100%;
+  grid-template-rows: 70px auto 100px;
 }

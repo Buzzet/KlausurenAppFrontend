@@ -8,9 +8,17 @@ import { RouterGuardService } from '../services/router-guard.service';
 })
 export class UserInterfaceComponent implements OnInit {
 
+
   constructor(public routerGuard: RouterGuardService) { }
 
   ngOnInit(): void {
+  }
+
+  isIPhoneCordovaApp(): boolean{
+    if (document.location.protocol === 'file:' && navigator.userAgent.toLocaleLowerCase().indexOf('iphone') !== -1){
+      return true;
+    }
+    return false;
   }
 
 }
