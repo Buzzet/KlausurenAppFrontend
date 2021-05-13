@@ -6,11 +6,11 @@
     <div class="credentials">
         <mat-form-field class="loginInput">
             <mat-label>E-Mail</mat-label>
-            <input matInput placeholder="Your HAW-Mail">
+            <input matInput [(ngModel)]="mail" placeholder="Your HAW-Mail">
           </mat-form-field>
           <mat-form-field class="loginInput">
             <mat-label>Password</mat-label>
-            <input [type]="hide ? 'password' : 'text'" matInput placeholder="Nicht dein HAW Passwort!">
+            <input [type]="hide ? 'password' : 'text'" [(ngModel)]="pw" matInput placeholder="Nicht dein HAW Passwort!">
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>

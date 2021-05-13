@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  klausurenService: "http://87.237.54.34:8201"
+  klausurenService: 'http://87.237.54.34:8201',
+  emailValidationService: 'http://87.237.54.34:8202',
+  nutzerService: 'http://87.237.54.34:8203'
 };
 
 /*

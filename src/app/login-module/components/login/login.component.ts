@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RouterGuardService } from '../../../services/router-guard.service';
+import {LoginService} from '../../services/login.service';
+import {User} from '../../modules/user';
 
 @Component({
   selector: 'app-login',
@@ -9,15 +10,21 @@ import { RouterGuardService } from '../../../services/router-guard.service';
 })
 export class LoginComponent implements OnInit {
   hide = true;
+  mail = '';
+  pw = '';
 
-  constructor(public router: Router, public routerGuard: RouterGuardService) { }
+  constructor(public router: Router, private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
 
 
-  onClickLogin(): void{
-    this.routerGuard.loggedIn = true;
+  async onClickLogin(){
+    const user: User = {
+      userMail: this.mail,
+      userPassword: this.pw,
+    };
+    const promise = await this.loginService.logIn(user);
     this.router.navigate(['view']);
   }
 

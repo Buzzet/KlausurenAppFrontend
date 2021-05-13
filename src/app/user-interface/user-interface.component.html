@@ -1,7 +1,7 @@
 <div class="body">
-    <app-header *ngIf="this.routerGuard.loggedIn"></app-header>
+    <app-header *ngIf="loginService.loggedIn$ | async"></app-header>
     <div class="router">
         <router-outlet></router-outlet>
     </div>
-    <app-tabs *ngIf="this.routerGuard.loggedIn"></app-tabs>
+    <app-tabs *ngIf="loginService.loggedIn$ | async"></app-tabs>
 </div>

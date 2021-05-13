@@ -18,13 +18,12 @@ export class RegisterComponent implements OnInit {
   }
 
   onClickRegister():void{
-    if(this.emailAddress.includes('@')){
+    if (this.emailAddress.includes('@')){
       this.validationFailed = true;
       return;
     }
-    console.log("emailServiceAufrufen")
+    console.log('emailServiceAufrufen');
     this.emailService.postEmailToService(this.emailAddress + '@haw-hamburg.de');
-    this.register.email = this.emailAddress + '@haw-hamburg.de';
     this.router.navigate(['register/send']);
   }
 
