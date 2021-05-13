@@ -13,4 +13,11 @@ export class UserInterfaceComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  isIPhoneCordovaApp(): boolean{
+    if (document.location.protocol === 'file:' && navigator.userAgent.toLocaleLowerCase().indexOf('iphone') !== -1){
+      return true;
+    }
+    return false;
+  }
+
 }
