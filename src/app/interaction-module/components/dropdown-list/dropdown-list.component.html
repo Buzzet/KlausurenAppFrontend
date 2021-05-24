@@ -1,0 +1,10 @@
+<div class="list">
+  <mat-form-field appearance="fill">
+    <mat-label>{{ placeholder }}</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let item of list" [value]="item">
+        {{item}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

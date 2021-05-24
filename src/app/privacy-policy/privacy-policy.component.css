@@ -1,0 +1,14 @@
+.body{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    overflow:scroll;
+}
+
+.ppContainer{
+    width: 80%;
+}
+
+ion-content{
+    --background: #A0BEFF;
+}

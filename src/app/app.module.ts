@@ -13,12 +13,15 @@ import { HttpClientModule } from '@angular/common/http';
 import {LoginModule} from './login-module/login.module';
 import {InteractionModule} from './interaction-module/interaction.module';
 import {UserInterfaceComponent} from './user-interface/user-interface.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { IonicModule } from '@ionic/angular';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserInterfaceComponent
+    UserInterfaceComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +34,7 @@ import {UserInterfaceComponent} from './user-interface/user-interface.component'
     FormsModule,
     HttpClientModule,
     LoginModule,
+    IonicModule.forRoot(),
     InteractionModule
   ],
   providers: [],
