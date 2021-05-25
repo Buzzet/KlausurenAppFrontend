@@ -1,5 +1,5 @@
 <div class="body">
-  <dropdown-list [list]="" placeholder="Studiengang"></dropdown-list>
+  <dropdown-list [list]="this.studiengang$ | async" placeholder="Studiengang"></dropdown-list>
   <dropdown-list [list]="semesters" placeholder="Semester"></dropdown-list>
   <dropdown-list [list]="moduls" placeholder="Modul"></dropdown-list>
     <button mat-raised-button color="primary" class="btn" disabled=false (click)="getKlausur()">Klausuren Anfordern</button>

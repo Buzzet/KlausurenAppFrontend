@@ -5,19 +5,18 @@ import {User} from '../modules/user';
 import {BehaviorSubject, Observable, Subject} from 'rxjs';
 import {RouteConfigLoadStart, Router} from '@angular/router';
 import {environment} from '../../../environments/environment';
-import { Configuration } from 'projects/klausuren-api/src';
+import { Configuration, KlausurenControllerService } from 'projects/klausuren-api/src';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  static getApiConfiguration(): Configuration {
-    return new Configuration({accessToken: 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdHJpbmcxMjNAaGF3LWhhbWJ1cmcuZGUiLCJleHAiOjE2MjIwNDA4ODMsImlhdCI6MTYyMTk1NDQ4M30.azOrCe1yjRvVPoXcY7bufxMKnHTqPdaAqjomu3z_6eI'});
-  }
+  
 
   private loginSubject$ = new Subject<LoginResponse>();
 
   login$ = this.loginSubject$.asObservable();
+  public jwt = '';
 
   loggedInSubject$ = new BehaviorSubject<boolean>(false);
 
@@ -25,15 +24,22 @@ export class LoginService {
 
   private url = environment.nutzerService + '/users/login';
 
-  constructor(private http: HttpClient, router: Router) { }
+  constructor(private http: HttpClient, router: Router, private klausurenApi: KlausurenControllerService) { }
+
+ static getApiConfiguration(): Configuration {
+    return new Configuration({basePath: environment.klausurenService});
+  }
+
 
   async logIn(user: User): Promise<LoginResponse>{
     const response = await this.http.post<LoginResponse>(this.url, user).toPromise();
     this.loginSubject$.next(response);
     console.log(response.jwtBearer);
     if (response.jwtBearer !== null){
+      this.jwt = response.jwtBearer;
       this.loggedInSubject$.next(true);
     }
+    this.klausurenApi.configuration.accessToken = this.jwt;
     return response;
   }
 
