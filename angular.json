@@ -122,6 +122,46 @@
           }
         }
       }
+    },
+    "KlausurenAPI": {
+      "projectType": "library",
+      "root": "projects/klausuren-api",
+      "sourceRoot": "projects/klausuren-api/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/klausuren-api/tsconfig.lib.json",
+            "project": "projects/klausuren-api/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/klausuren-api/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/klausuren-api/src/test.ts",
+            "tsConfig": "projects/klausuren-api/tsconfig.spec.json",
+            "karmaConfig": "projects/klausuren-api/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/klausuren-api/tsconfig.lib.json",
+              "projects/klausuren-api/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "KlausurenApp"

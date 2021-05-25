@@ -15,6 +15,8 @@ import {InteractionModule} from './interaction-module/interaction.module';
 import {UserInterfaceComponent} from './user-interface/user-interface.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { IonicModule } from '@ionic/angular';
+import { ApiModule } from 'projects/klausuren-api/src';
+import { LoginService } from './login-module/services/login.service';
 
 
 @NgModule({
@@ -35,6 +37,7 @@ import { IonicModule } from '@ionic/angular';
     HttpClientModule,
     LoginModule,
     IonicModule.forRoot(),
+    ApiModule.forRoot(LoginService.getApiConfiguration),
     InteractionModule
   ],
   providers: [],
