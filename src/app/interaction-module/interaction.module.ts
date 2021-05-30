@@ -12,6 +12,8 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { DropdownListComponent } from './components/dropdown-list/dropdown-list.component';
 import { KlausurInputComponent } from './components/klausur-input/klausur-input.component';
+import { KlausurDropdownSelectionComponent } from './components/klausur-dropdown-selection/klausur-dropdown-selection.component';
+import { KlausurInputSelectionComponent } from './components/klausur-input-selection/klausur-input-selection.component';
 
 
 
@@ -22,7 +24,9 @@ import { KlausurInputComponent } from './components/klausur-input/klausur-input.
     ViewKlausurComponent,
     PostKlausurComponent,
     DropdownListComponent,
-    KlausurInputComponent
+    KlausurInputComponent,
+    KlausurDropdownSelectionComponent,
+    KlausurInputSelectionComponent
   ],
   imports: [
     CommonModule,

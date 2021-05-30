@@ -11,18 +11,7 @@ export class PostKlausurComponent implements OnInit {
   progress;
   files = undefined;
   btnKlausurDisable = true;
-  studiengang: string;
-  semester: string;
-  modul: string;
-  setStudiengang($event: string): void{
-    this.studiengang = $event;
-  }
-  setSemester($event: string): void{
-    this.semester = $event;
-  }
-  setModul($event: string): void{
-    this.modul = $event;
-  }
+  newKlausur = false;
   constructor(public klausurenService: KlausurenService) { }
   ngOnInit(): void {
   }
@@ -30,7 +19,6 @@ export class PostKlausurComponent implements OnInit {
   onFileInput(files: FileList): void {
     this.btnKlausurDisable = false;
     this.files = files;
-    console.log(this.semester, this.studiengang, this.modul);
   }
 
   upload(): void{

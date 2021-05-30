@@ -34,9 +34,12 @@
   width: 80%;
   justify-content: space-around;
 }
-dropdown-list{
+klausur-dropdown-selection{
   width: 80%;
 }
-klausur-input{
+klausur-input-selection{
   width: 80%;
+}
+p{
+  font-style: italic;
 }
