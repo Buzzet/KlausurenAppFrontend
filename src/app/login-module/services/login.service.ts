@@ -11,7 +11,7 @@ import { Configuration, KlausurenControllerService } from 'projects/klausuren-ap
   providedIn: 'root'
 })
 export class LoginService {
-  
+
 
   private loginSubject$ = new Subject<LoginResponse>();
 
@@ -30,14 +30,21 @@ export class LoginService {
     return new Configuration({basePath: environment.klausurenService});
   }
 
+  async autoLogIn(): Promise<LoginResponse>{
+    if (localStorage.getItem('klausuren-user')){
+      const user: User = {userPassword: localStorage.getItem('klausuren-pw'), userMail: localStorage.getItem('klausuren-user')};
+      return this.logIn(user);
+    }
+  }
 
   async logIn(user: User): Promise<LoginResponse>{
     const response = await this.http.post<LoginResponse>(this.url, user).toPromise();
     this.loginSubject$.next(response);
-    console.log(response.jwtBearer);
     if (response.jwtBearer !== null){
       this.jwt = response.jwtBearer;
       this.loggedInSubject$.next(true);
+      localStorage.setItem('klausuren-user', user.userMail);
+      localStorage.setItem('klausuren-pw', user.userPassword);
     }
     this.klausurenApi.configuration.accessToken = this.jwt;
     return response;

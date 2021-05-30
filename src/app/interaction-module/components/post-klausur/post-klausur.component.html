@@ -1,7 +1,7 @@
 <div class="body">
-  <dropdown-list [list]="studiengaenge" placeholder="Studiengang"></dropdown-list>
-  <dropdown-list [list]="semesters" placeholder="Semester"></dropdown-list>
-  <dropdown-list [list]="moduls" placeholder="Modul"></dropdown-list>
+  <klausur-input [label]="'Studiengang'" (value)="setStudiengang($event)"></klausur-input>
+  <klausur-input [label]="'Semester'" (value)="setSemester($event)"></klausur-input>
+  <klausur-input [label]="'Modul'" (value)="setModul($event)"></klausur-input>
     <div class="uploadBtn">
       <label for="file-upload" class="custom-file-upload">
         <mat-icon class="uploadIcon">upload_file</mat-icon>

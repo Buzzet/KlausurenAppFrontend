@@ -11,16 +11,26 @@ export class PostKlausurComponent implements OnInit {
   progress;
   files = undefined;
   btnKlausurDisable = true;
+  studiengang: string;
+  semester: string;
+  modul: string;
+  setStudiengang($event: string): void{
+    this.studiengang = $event;
+  }
+  setSemester($event: string): void{
+    this.semester = $event;
+  }
+  setModul($event: string): void{
+    this.modul = $event;
+  }
   constructor(public klausurenService: KlausurenService) { }
-  studiengaenge: string[] = ['Wirtschaftsinformatik', 'Betriebswirtschaftslehre', 'Angewante Informatik'];
-  semesters: string[] = ['Semester 1', 'Semester 2', 'Semester 3'];
-  moduls: string[] = ['PM2', 'IN2', 'SEA'];
   ngOnInit(): void {
   }
 
   onFileInput(files: FileList): void {
     this.btnKlausurDisable = false;
     this.files = files;
+    console.log(this.semester, this.studiengang, this.modul);
   }
 
   upload(): void{
@@ -36,4 +46,5 @@ export class PostKlausurComponent implements OnInit {
       }
     });
   }
+
 }

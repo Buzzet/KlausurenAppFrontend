@@ -11,6 +11,7 @@ import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { DropdownListComponent } from './components/dropdown-list/dropdown-list.component';
+import { KlausurInputComponent } from './components/klausur-input/klausur-input.component';
 
 
 
@@ -20,7 +21,8 @@ import { DropdownListComponent } from './components/dropdown-list/dropdown-list.
     HeaderComponent,
     ViewKlausurComponent,
     PostKlausurComponent,
-    DropdownListComponent
+    DropdownListComponent,
+    KlausurInputComponent
   ],
   imports: [
     CommonModule,

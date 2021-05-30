@@ -15,11 +15,15 @@ export class LoginComponent implements OnInit {
 
   constructor(public router: Router, private loginService: LoginService) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    if (localStorage.getItem('klausuren-user')){
+      await this.loginService.autoLogIn();
+      this.router.navigate(['view']);
+    }
   }
 
 
-  async onClickLogin(){
+  async onClickLogin(): Promise<void>{
     const user: User = {
       userMail: this.mail,
       userPassword: this.pw,

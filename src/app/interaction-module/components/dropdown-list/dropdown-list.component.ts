@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {C} from '@angular/cdk/keycodes';
 
 @Component({
   selector: 'dropdown-list',
@@ -12,9 +13,20 @@ export class DropdownListComponent implements OnInit {
 
   @Input()
   placeholder: string;
+
+  @Input()
+  disabled = false;
+
+  @Output()
+  selectionChanged = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  change(event): void{
+    this.selectionChanged.emit(event.value);
   }
 
 }

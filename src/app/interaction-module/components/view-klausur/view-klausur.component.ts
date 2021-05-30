@@ -9,21 +9,31 @@ import { Observable } from 'rxjs';
   styleUrls: ['./view-klausur.component.css'],
 })
 export class ViewKlausurComponent implements OnInit {
+  validInput = false;
 
-  constructor(public klausurenApi: KlausurenControllerService) { 
-  }
+  constructor(public klausurenApi: KlausurenControllerService) {}
 
   studiengang$: Observable<any>;
+  semester$: Observable<any>;
+  moduls$: Observable<any>;
+  currentStudiengang: string;
+  currentSemester: number;
 
-studiengaenge: String[] = ['Wirtschaftsinformatik', 'Betriebswirtschaftslehre', 'Angewante Informatik'];
-semesters: String[] = ['Semester 1', 'Semester 2', 'Semester 3', 'Semester 4'];
-moduls: String[] = ['PM2', 'IN2', 'SEA'];
   ngOnInit(): void {
     this.studiengang$ = this.klausurenApi.getAllStudiengaenge();
   }
 
-  getKlausur(){
+  getSemester($event): void{
+    this.currentStudiengang = $event;
+    this.semester$ = this.klausurenApi.getAllSemestersByStudiengang($event);
+  }
+
+  getKlausur(): void{
 
   }
 
-}
+  getModuls($event: string): void {
+    console.log('Neuer Wert in Semester: ' + $event);
+    this.currentSemester = +$event;
+    this.moduls$ = this.klausurenApi.getAllModuleByStudiengangAndSemester(this.currentStudiengang, this.currentSemester);
+  }}
