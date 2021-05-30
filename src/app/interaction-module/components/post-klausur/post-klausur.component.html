@@ -2,7 +2,7 @@
   <klausur-dropdown-selection *ngIf="!newKlausur"></klausur-dropdown-selection>
   <klausur-input-selection *ngIf="newKlausur"></klausur-input-selection>
   <p *ngIf="!newKlausur">Klausur nicht in der Liste?</p>
-  <button mat-raised-button color="accent" class="btn" (click)="newKlausur = !newKlausur">{{newKlausur ? 'Klausur auswählen' : 'Neue Klausur anlegen'}}</button>
+  <button mat-raised-button color="accent" class="btn" (click)="newKlausur = !newKlausur">{{newKlausur ? 'Klausur auswählen' : 'Selber eintragen'}}</button>
     <div class="uploadBtn">
       <label for="file-upload" class="custom-file-upload">
         <mat-icon class="uploadIcon">upload_file</mat-icon>
