@@ -23,7 +23,7 @@ import { LoginService } from './login-module/services/login.service';
   declarations: [
     AppComponent,
     UserInterfaceComponent,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
   ],
   imports: [
     BrowserModule,

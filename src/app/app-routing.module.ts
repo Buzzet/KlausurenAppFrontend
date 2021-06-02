@@ -8,6 +8,7 @@ import { RegisterComponent } from './login-module/components/register/register.c
 import { ViewKlausurComponent } from './interaction-module/components/view-klausur/view-klausur.component';
 import {AuthGuard} from './auth.guard';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import {PdfViewerComponent} from './interaction-module/components/pdf-viewer/pdf-viewer.component';
 
 const routes: Routes = [
   { path: 'view', component: ViewKlausurComponent, canActivate: [AuthGuard]},
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'register/send', component: RegisterEmailSendComponent},
   { path: 'register/password', component: RegisterPasswordComponent},
   { path: 'privacy-policy', component: PrivacyPolicyComponent},
+  {path: 'klausur', component: PdfViewerComponent},
   {path: '**', component: LoginComponent}
 ];;
 

@@ -14,6 +14,8 @@ import { DropdownListComponent } from './components/dropdown-list/dropdown-list.
 import { KlausurInputComponent } from './components/klausur-input/klausur-input.component';
 import { KlausurDropdownSelectionComponent } from './components/klausur-dropdown-selection/klausur-dropdown-selection.component';
 import { KlausurInputSelectionComponent } from './components/klausur-input-selection/klausur-input-selection.component';
+import { PdfViewerComponent } from './components/pdf-viewer/pdf-viewer.component';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 
 
 
@@ -26,7 +28,8 @@ import { KlausurInputSelectionComponent } from './components/klausur-input-selec
     DropdownListComponent,
     KlausurInputComponent,
     KlausurDropdownSelectionComponent,
-    KlausurInputSelectionComponent
+    KlausurInputSelectionComponent,
+    PdfViewerComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +38,8 @@ import { KlausurInputSelectionComponent } from './components/klausur-input-selec
     MatButtonModule,
     MatInputModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxExtendedPdfViewerModule
   ], exports: [
     TabsComponent,
     HeaderComponent,
