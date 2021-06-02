@@ -1,0 +1,3 @@
+<dropdown-list (selectionChanged)="getSemester($event)" [list]="this.studiengang$ | async" placeholder="Studiengang"></dropdown-list>
+<dropdown-list (selectionChanged)="getModuls($event)" [list]="semester$ | async" placeholder="Semester"></dropdown-list>
+<dropdown-list (selectionChanged)="this.validInput.emit(true)" [list]="moduls$ | async" placeholder="Modul"></dropdown-list>
