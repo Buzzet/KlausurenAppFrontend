@@ -1,8 +1,9 @@
 <div class="body">
-  <klausur-dropdown-selection *ngIf="!newKlausur"></klausur-dropdown-selection>
+  <klausur-dropdown-selection *ngIf="!newKlausur" (validInput)="setSelection($event)"></klausur-dropdown-selection>
   <klausur-input-selection *ngIf="newKlausur"></klausur-input-selection>
+  <dropdown-list [list]="this.yearList" [disabled]="disableYear" [placeholder]="'Jahr'" (selectionChanged)="selectionChanged($event)"></dropdown-list>
   <p *ngIf="!newKlausur">Klausur nicht in der Liste?</p>
-  <button mat-raised-button color="accent" class="btn" (click)="newKlausur = !newKlausur">{{newKlausur ? 'Klausur auswählen' : 'Selber eintragen'}}</button>
+  <button mat-raised-button color="accent" class="btn" (click)="onClickNewKlausur()">{{newKlausur ? 'Klausur auswählen' : 'Selber eintragen'}}</button>
     <div class="uploadBtn">
       <label for="file-upload" class="custom-file-upload">
         <mat-icon class="uploadIcon">upload_file</mat-icon>
@@ -15,5 +16,6 @@
       <mat-icon>delete</mat-icon>
     </button>
   </div>
-    <button mat-raised-button color="primary" class="btn" [disabled]="btnKlausurDisable" (click)="upload()">Klausur Hochladen</button>
+  <mat-checkbox class="example-margin" [(ngModel)]="checkboxChecked">Hiermit bestätige ich, dass ich die Nutzungsrechte an der hochgeladenen Klausur besitze.</mat-checkbox>
+    <button mat-raised-button color="primary" class="btn" [disabled]="btnKlausurDisable || !checkboxChecked" (click)="upload()">Klausur Hochladen</button>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpEventType, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { KlausurenService } from '../../services/klausuren.service';
+import {DropDownSelection} from '../../modules/drop-down-selection';
 
 @Component({
   selector: 'app-post-klausur',
@@ -12,12 +13,22 @@ export class PostKlausurComponent implements OnInit {
   files = undefined;
   btnKlausurDisable = true;
   newKlausur = false;
+  yearList: string[] = [];
+  inputSet = false;
+  fileSet = false;
+  dropDownSelection: DropDownSelection;
+  disableYear = true;
+  checkboxChecked = false;
   constructor(public klausurenService: KlausurenService) { }
   ngOnInit(): void {
+    this.fillDropDownYear();
   }
 
   onFileInput(files: FileList): void {
-    this.btnKlausurDisable = false;
+    this.fileSet = true;
+    if (this.inputSet){
+      this.btnKlausurDisable = false;
+    }
     this.files = files;
   }
 
@@ -35,4 +46,33 @@ export class PostKlausurComponent implements OnInit {
     });
   }
 
+  selectionChanged($event: string): void {
+   if (this.fileSet){
+     this.btnKlausurDisable = false;
+   }
+   this.inputSet = true;
+  }
+
+  setSelection($event: DropDownSelection): void {
+    this.dropDownSelection = $event;
+    this.disableYear = false;
+  }
+
+  private fillDropDownYear(): void{
+    const currentYear = new Date().getFullYear();
+    for (let i = currentYear; i >= 2010; i--){
+      const nextYear = i + 1;
+      this.yearList.push('WS' + i + '/' + nextYear);
+      this.yearList.push('SS' + i);
+    }
+  }
+
+  onClickNewKlausur(): void {
+    this.newKlausur = !this.newKlausur;
+    if(this.newKlausur){
+      this.disableYear = false;
+    }else {
+      this.disableYear = true;
+    }
+  }
 }

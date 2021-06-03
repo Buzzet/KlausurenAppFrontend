@@ -16,6 +16,8 @@ import { KlausurDropdownSelectionComponent } from './components/klausur-dropdown
 import { KlausurInputSelectionComponent } from './components/klausur-input-selection/klausur-input-selection.component';
 import { PdfViewerComponent } from './components/pdf-viewer/pdf-viewer.component';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+import {IonicModule} from '@ionic/angular';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 
@@ -39,7 +41,9 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
     MatInputModule,
     FormsModule,
     HttpClientModule,
-    NgxExtendedPdfViewerModule
+    NgxExtendedPdfViewerModule,
+    IonicModule,
+    MatCheckboxModule
   ], exports: [
     TabsComponent,
     HeaderComponent,

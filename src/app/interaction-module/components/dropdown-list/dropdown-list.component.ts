@@ -15,7 +15,7 @@ export class DropdownListComponent implements OnInit {
   placeholder: string;
 
   @Input()
-  disabled = false;
+  disabled: boolean;
 
   @Output()
   selectionChanged = new EventEmitter<string>();

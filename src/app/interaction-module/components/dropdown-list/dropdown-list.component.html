@@ -1,7 +1,7 @@
 <div class="list">
   <mat-form-field appearance="fill">
     <mat-label>{{ placeholder }}</mat-label>
-    <mat-select (selectionChange)="change($event)" [disabled]="list === null">
+    <mat-select (selectionChange)="change($event)" [disabled]="list === null || disabled">
       <mat-option *ngFor="let item of list" [value]="item">
         {{item}}
       </mat-option>
