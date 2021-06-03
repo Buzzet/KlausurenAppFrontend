@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpEventType, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { KlausurenService } from '../../services/klausuren.service';
 import {DropDownSelection} from '../../modules/drop-down-selection';
+import {ApiModule, KlausurenControllerService} from '../../../../../projects/klausuren-api/src';
 
 @Component({
   selector: 'app-post-klausur',
@@ -19,7 +20,8 @@ export class PostKlausurComponent implements OnInit {
   dropDownSelection: DropDownSelection;
   disableYear = true;
   checkboxChecked = false;
-  constructor(public klausurenService: KlausurenService) { }
+  year: string;
+  constructor(private klausrenAPI: KlausurenControllerService) { }
   ngOnInit(): void {
     this.fillDropDownYear();
   }
@@ -34,16 +36,8 @@ export class PostKlausurComponent implements OnInit {
 
   upload(): void{
     console.log(this.files);
-    const response = this.klausurenService.uploadKlausur(this.files);
-    response.subscribe(event => {
-      console.log(event);
-      if (event.type === HttpEventType.UploadProgress) {
-        this.progress.percentage = Math.round(100 * event.loaded / event.total);
-        console.log(this.progress);
-      } else if (event instanceof HttpResponse) {
-        alert('File Successfully Uploaded');
-      }
-    });
+    this.klausrenAPI.addKlausurForm(this.dropDownSelection.semester, this.dropDownSelection.studiengang, this.year,
+      this.dropDownSelection.modul, '', this.files, localStorage.getItem('klausuren-user'));
   }
 
   selectionChanged($event: string): void {
@@ -51,6 +45,7 @@ export class PostKlausurComponent implements OnInit {
      this.btnKlausurDisable = false;
    }
    this.inputSet = true;
+   this.year = $event;
   }
 
   setSelection($event: DropDownSelection): void {

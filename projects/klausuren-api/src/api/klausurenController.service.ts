@@ -26,7 +26,7 @@ import { Configuration }                                     from '../configurat
 @Injectable()
 export class KlausurenControllerService {
 
-    protected basePath = 'http://87.237.54.34:8201';
+    protected basePath = 'http://klausuren-app.de:8201';
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
 
@@ -64,51 +64,21 @@ export class KlausurenControllerService {
      * @param modul 
      * @param prof 
      * @param fileArray 
+     * @param uploadedFrom 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public addKlausurForm(semester: number, studiengang: string, jahr: string, modul: string, prof: string, fileArray?: Blob, observe?: 'body', reportProgress?: boolean): Observable<string>;
-    public addKlausurForm(semester: number, studiengang: string, jahr: string, modul: string, prof: string, fileArray?: Blob, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<string>>;
-    public addKlausurForm(semester: number, studiengang: string, jahr: string, modul: string, prof: string, fileArray?: Blob, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<string>>;
-    public addKlausurForm(semester: number, studiengang: string, jahr: string, modul: string, prof: string, fileArray?: Blob, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
-
-        if (semester === null || semester === undefined) {
-            throw new Error('Required parameter semester was null or undefined when calling addKlausur.');
-        }
-
-        if (studiengang === null || studiengang === undefined) {
-            throw new Error('Required parameter studiengang was null or undefined when calling addKlausur.');
-        }
-
-        if (jahr === null || jahr === undefined) {
-            throw new Error('Required parameter jahr was null or undefined when calling addKlausur.');
-        }
-
-        if (modul === null || modul === undefined) {
-            throw new Error('Required parameter modul was null or undefined when calling addKlausur.');
-        }
-
-        if (prof === null || prof === undefined) {
-            throw new Error('Required parameter prof was null or undefined when calling addKlausur.');
-        }
+    public addKlausurForm(semester?: number, studiengang?: string, jahr?: string, modul?: string, prof?: string, fileArray?: Blob, uploadedFrom?: string, observe?: 'body', reportProgress?: boolean): Observable<string>;
+    public addKlausurForm(semester?: number, studiengang?: string, jahr?: string, modul?: string, prof?: string, fileArray?: Blob, uploadedFrom?: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<string>>;
+    public addKlausurForm(semester?: number, studiengang?: string, jahr?: string, modul?: string, prof?: string, fileArray?: Blob, uploadedFrom?: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<string>>;
+    public addKlausurForm(semester?: number, studiengang?: string, jahr?: string, modul?: string, prof?: string, fileArray?: Blob, uploadedFrom?: string, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
 
-        let queryParameters = new HttpParams({encoder: new CustomHttpUrlEncodingCodec()});
-        if (semester !== undefined && semester !== null) {
-            queryParameters = queryParameters.set('semester', <any>semester);
-        }
-        if (studiengang !== undefined && studiengang !== null) {
-            queryParameters = queryParameters.set('studiengang', <any>studiengang);
-        }
-        if (jahr !== undefined && jahr !== null) {
-            queryParameters = queryParameters.set('jahr', <any>jahr);
-        }
-        if (modul !== undefined && modul !== null) {
-            queryParameters = queryParameters.set('modul', <any>modul);
-        }
-        if (prof !== undefined && prof !== null) {
-            queryParameters = queryParameters.set('prof', <any>prof);
-        }
+
+
+
+
+
 
         let headers = this.defaultHeaders;
 
@@ -147,14 +117,31 @@ export class KlausurenControllerService {
             formParams = new HttpParams({encoder: new CustomHttpUrlEncodingCodec()});
         }
 
+        if (semester !== undefined) {
+            formParams = formParams.append('semester', <any>semester) as any || formParams;
+        }
+        if (studiengang !== undefined) {
+            formParams = formParams.append('studiengang', <any>studiengang) as any || formParams;
+        }
+        if (jahr !== undefined) {
+            formParams = formParams.append('jahr', <any>jahr) as any || formParams;
+        }
+        if (modul !== undefined) {
+            formParams = formParams.append('modul', <any>modul) as any || formParams;
+        }
+        if (prof !== undefined) {
+            formParams = formParams.append('prof', <any>prof) as any || formParams;
+        }
         if (fileArray !== undefined) {
             formParams = formParams.append('fileArray', <any>fileArray) as any || formParams;
+        }
+        if (uploadedFrom !== undefined) {
+            formParams = formParams.append('uploadedFrom', <any>uploadedFrom) as any || formParams;
         }
 
         return this.httpClient.request<string>('post',`${this.basePath}/klausur/hochladen`,
             {
                 body: convertFormParamsToString ? formParams.toString() : formParams,
-                params: queryParameters,
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
                 observe: observe,

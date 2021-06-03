@@ -10,6 +10,12 @@
  * Do not edit the class manually.
  */
 
-export interface Body { 
-    fileArray?: Blob;
+export interface KlausurRequest { 
+    semester: number;
+    studiengang: string;
+    jahr: string;
+    modul: string;
+    prof?: string;
+    fileArray: Blob;
+    uploadedFrom: string;
 }
