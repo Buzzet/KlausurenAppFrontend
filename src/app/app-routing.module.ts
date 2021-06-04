@@ -9,20 +9,23 @@ import { ViewKlausurComponent } from './interaction-module/components/view-klaus
 import {AuthGuard} from './auth.guard';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import {PdfViewerComponent} from './interaction-module/components/pdf-viewer/pdf-viewer.component';
+import {TabsComponent} from './interaction-module/components/tabs/tabs.component';
 
 const routes: Routes = [
-  { path: 'view', component: ViewKlausurComponent, canActivate: [AuthGuard]},
-  { path: 'post', component: PostKlausurComponent, canActivate: [AuthGuard]},
+  {path: 'klausuren', component: TabsComponent, children: [
+      { path: 'view', component: ViewKlausurComponent, canActivate: [AuthGuard]},
+      { path: 'post', component: PostKlausurComponent, canActivate: [AuthGuard]},
+      {path: 'klausur', component: PdfViewerComponent, canActivate: [AuthGuard]},
+    ], canActivate: [AuthGuard]},
   { path: 'register', component: RegisterComponent},
   { path: 'register/send', component: RegisterEmailSendComponent},
   { path: 'register/password', component: RegisterPasswordComponent},
   { path: 'privacy-policy', component: PrivacyPolicyComponent},
-  {path: 'klausur', component: PdfViewerComponent},
   {path: '**', component: LoginComponent}
 ];;
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash: true})],
+  imports: [RouterModule.forRoot(routes, {})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

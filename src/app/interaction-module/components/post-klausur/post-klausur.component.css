@@ -1,11 +1,10 @@
 .body{
     height: 100%;
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
 }
 
 .btn{
@@ -45,4 +44,24 @@ p{
 }
 dropdown-list{
   width: 80%;
+}
+.checkbox{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  justify-content: center;
+  align-items: center;
+}
+.checkbox>mat-checkbox{
+  word-wrap: break-word;
+}
+app-success{
+  position: absolute;
+}
+
+@media only screen and (max-height: 375px) {
+  body {
+    background-color: lightblue;
+  }
 }

@@ -1,4 +1,4 @@
-<div class="body">
+<!--div class="body">
     <div class="btn post disable-dbl-tap-zoom">
         <mat-icon [inline]="true" [style.color]="colorPost" (click)="onClickPost()">file_upload</mat-icon>
     </div>
@@ -12,4 +12,17 @@
     <div class="btn settings disable-dbl-tap-zoom">
         <mat-icon [inline]="true">settings</mat-icon>
     </div>
-</div>
+</div-->
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="post">
+      <ion-icon name="cloud-upload-outline"></ion-icon>
+      <ion-label>Post</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="view">
+      <ion-icon name="eye-outline"></ion-icon>
+      <ion-label>View</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

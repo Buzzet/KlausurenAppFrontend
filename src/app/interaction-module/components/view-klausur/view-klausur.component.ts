@@ -30,7 +30,7 @@ export class ViewKlausurComponent implements OnInit {
 
   getKlausur(): void{
     const id = '60b7fb9aa12a95109252f4e5';
-    this.router.navigate(['klausur'], {queryParams: {id}});
+    this.router.navigate(['klausuren/klausur'], {queryParams: {id}});
   }
 
 

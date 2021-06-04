@@ -1,8 +1,8 @@
 <div class="body">
-  <app-header *ngIf="loginService.loggedIn$ | async"></app-header>
+  <ion-app class="body">
+    <app-header></app-header>
     <div class="router">
         <router-outlet></router-outlet>
     </div>
-  <app-tabs *ngIf="loginService.loggedIn$ | async"></app-tabs>
-  <div class="ios-lower"  *ngIf="loginService.loggedIn$ | async"></div>
+  </ion-app>
 </div>

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import { HttpClient, HttpEventType, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { KlausurenService } from '../../services/klausuren.service';
 import {DropDownSelection} from '../../modules/drop-down-selection';
 import {ApiModule, KlausurenControllerService} from '../../../../../projects/klausuren-api/src';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-post-klausur',
@@ -11,7 +12,7 @@ import {ApiModule, KlausurenControllerService} from '../../../../../projects/kla
 })
 export class PostKlausurComponent implements OnInit {
   progress;
-  files = undefined;
+  files: FileList;
   btnKlausurDisable = true;
   newKlausur = false;
   yearList: string[] = [];
@@ -21,7 +22,8 @@ export class PostKlausurComponent implements OnInit {
   disableYear = true;
   checkboxChecked = false;
   year: string;
-  constructor(private klausrenAPI: KlausurenControllerService) { }
+  uploadSuccessfull = false;
+  constructor(private klausrenAPI: KlausurenControllerService, private router: Router) { }
   ngOnInit(): void {
     this.fillDropDownYear();
   }
@@ -37,7 +39,12 @@ export class PostKlausurComponent implements OnInit {
   upload(): void{
     console.log(this.files);
     this.klausrenAPI.addKlausurForm(this.dropDownSelection.semester, this.dropDownSelection.studiengang, this.year,
-      this.dropDownSelection.modul, '', this.files, localStorage.getItem('klausuren-user'));
+      this.dropDownSelection.modul, '', this.files[0], localStorage.getItem('klausuren-user')).subscribe(ele => {console.log(ele); }, error => {
+        if (error?.status === 200){
+          this.uploadSuccessfull = true;
+        }
+      }
+    );
   }
 
   selectionChanged($event: string): void {
@@ -49,6 +56,7 @@ export class PostKlausurComponent implements OnInit {
   }
 
   setSelection($event: DropDownSelection): void {
+    console.log($event);
     this.dropDownSelection = $event;
     this.disableYear = false;
   }
@@ -63,11 +71,24 @@ export class PostKlausurComponent implements OnInit {
   }
 
   onClickNewKlausur(): void {
-    this.newKlausur = !this.newKlausur;
-    if(this.newKlausur){
+    console.log("click");
+    this.newKlausur = ! this.newKlausur;
+    if (this.newKlausur){
       this.disableYear = false;
     }else {
       this.disableYear = true;
     }
+  }
+
+  onClickSuccessMessage(): void {
+    this.uploadSuccessfull = false;
+    this.router.navigateByUrl('/RefreshComponent', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['post']);
+    });
+  }
+
+  deleteFileArray(): void {
+    console.log(this.files);
+    this.files = undefined;
   }
 }

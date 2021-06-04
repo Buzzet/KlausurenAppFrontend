@@ -14,9 +14,10 @@ import {LoginModule} from './login-module/login.module';
 import {InteractionModule} from './interaction-module/interaction.module';
 import {UserInterfaceComponent} from './user-interface/user-interface.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
-import { IonicModule } from '@ionic/angular';
+import {IonicModule, IonicRouteStrategy} from '@ionic/angular';
 import { ApiModule } from 'projects/klausuren-api/src';
 import { LoginService } from './login-module/services/login.service';
+import {RouteReuseStrategy} from '@angular/router';
 
 
 @NgModule({
@@ -40,7 +41,7 @@ import { LoginService } from './login-module/services/login.service';
     ApiModule.forRoot(LoginService.getApiConfiguration),
     InteractionModule
   ],
-  providers: [],
+  providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,16 +13,5 @@ export class KlausurenService {
 
   url: string = environment.klausurenService;
 
-  uploadKlausur(files: FileList): Observable<any>{
-    const data: FormData = new FormData();
-    data.append('fileArray', files[0]);
-      let body = {'title': files[0].name, 'fileArray': files}
-            
-      return this.httpClient.post(this.url + "/test/klausurUpload", data, {
-        reportProgress: true,
-        responseType: 'text'
-        })
-  }
-
 }
 

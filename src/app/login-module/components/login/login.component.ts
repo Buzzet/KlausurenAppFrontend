@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     if (localStorage.getItem('klausuren-user')){
       await this.loginService.autoLogIn();
-      this.router.navigate(['view']);
+      this.router.navigateByUrl('klausuren/view');
     }
   }
 
@@ -29,10 +29,10 @@ export class LoginComponent implements OnInit {
       userPassword: this.pw,
     };
     const promise = await this.loginService.logIn(user);
-    this.router.navigate(['view']);
+    this.router.navigateByUrl('klausuren/view');
   }
 
   onClickRegister(): void{
-    this.router.navigate(['register']);
+    this.router.navigateByUrl('klausuren/register');
   }
 }

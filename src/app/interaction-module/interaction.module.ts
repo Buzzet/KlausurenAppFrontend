@@ -18,6 +18,7 @@ import { PdfViewerComponent } from './components/pdf-viewer/pdf-viewer.component
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import {IonicModule} from '@ionic/angular';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { SuccessComponent } from './components/success/success.component';
 
 
 
@@ -31,7 +32,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     KlausurInputComponent,
     KlausurDropdownSelectionComponent,
     KlausurInputSelectionComponent,
-    PdfViewerComponent
+    PdfViewerComponent,
+    SuccessComponent
   ],
   imports: [
     CommonModule,
