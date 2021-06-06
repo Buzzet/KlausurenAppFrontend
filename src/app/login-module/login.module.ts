@@ -8,6 +8,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {RegisterComponent} from './components/register/register.component';
 import {RegisterEmailSendComponent} from './components/register-email-send/register-email-send.component';
 import {RegisterPasswordComponent} from './components/register-password/register-password.component';
+import {IonicModule} from '@ionic/angular';
 
 
 
@@ -18,13 +19,14 @@ import {RegisterPasswordComponent} from './components/register-password/register
     RegisterEmailSendComponent,
     RegisterPasswordComponent
   ],
-  imports: [
-    CommonModule,
-    MatInputModule,
-    MatIconModule,
-    MatButtonModule,
-    FormsModule
-  ],
+    imports: [
+        CommonModule,
+        MatInputModule,
+        MatIconModule,
+        MatButtonModule,
+        FormsModule,
+        IonicModule
+    ],
   exports: [
     LoginComponent,
     RegisterComponent,

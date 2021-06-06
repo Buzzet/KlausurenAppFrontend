@@ -1,5 +1,6 @@
 <div class="body">
   <klausur-dropdown-selection (validInput)="onSelectionDone($event)"></klausur-dropdown-selection>
+  <dropdown-list [list]="this.yearList" [disabled]="disableYear" [placeholder]="'Jahr'" (selectionChanged)="selectionChanged($event)"></dropdown-list>
     <button mat-raised-button color="primary" class="btn" [disabled]="!this.validInput" (click)="getKlausur()">Klausuren Anfordern</button>
     <div class="informationBox">
         <p class="informationText">Du findest deinen Studiengang, dein Semester oder dein Modul nicht wieder? Dann sind für diese wahrscheinlich noch keine Klausuren vorhanden. Sorry!</p>

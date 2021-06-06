@@ -12,6 +12,7 @@ import {PdfViewerComponent} from './interaction-module/components/pdf-viewer/pdf
 import {TabsComponent} from './interaction-module/components/tabs/tabs.component';
 
 const routes: Routes = [
+  {path: '', component: LoginComponent},
   {path: 'klausuren', component: TabsComponent, children: [
       { path: 'view', component: ViewKlausurComponent, canActivate: [AuthGuard]},
       { path: 'post', component: PostKlausurComponent, canActivate: [AuthGuard]},
@@ -25,7 +26,7 @@ const routes: Routes = [
 ];;
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {})],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

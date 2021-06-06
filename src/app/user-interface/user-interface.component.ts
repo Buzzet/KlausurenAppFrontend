@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService} from '../login-module/services/login.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-user-interface',
@@ -8,7 +9,7 @@ import {LoginService} from '../login-module/services/login.service';
 })
 export class UserInterfaceComponent implements OnInit {
 
-  constructor(public loginService: LoginService) { }
+  constructor(public loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
     // Use matchMedia to check the user preference
