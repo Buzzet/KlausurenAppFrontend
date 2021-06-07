@@ -28,7 +28,6 @@ import {RouteReuseStrategy} from '@angular/router';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
     MatSelectModule,
@@ -36,10 +35,11 @@ import {RouteReuseStrategy} from '@angular/router';
     MatInputModule,
     FormsModule,
     HttpClientModule,
-    LoginModule,
     IonicModule.forRoot(),
     ApiModule.forRoot(LoginService.getApiConfiguration),
-    InteractionModule
+    InteractionModule,
+    LoginModule,
+    AppRoutingModule
   ],
   providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
   bootstrap: [AppComponent]

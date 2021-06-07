@@ -13,6 +13,7 @@ import {TabsComponent} from './interaction-module/components/tabs/tabs.component
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'klausuren', component: TabsComponent, children: [
       { path: 'view', component: ViewKlausurComponent, canActivate: [AuthGuard]},
       { path: 'post', component: PostKlausurComponent, canActivate: [AuthGuard]},

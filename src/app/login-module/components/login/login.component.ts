@@ -33,6 +33,6 @@ export class LoginComponent implements OnInit {
   }
 
   onClickRegister(): void{
-    this.router.navigateByUrl('klausuren/register');
+    this.router.navigateByUrl('register');
   }
 }

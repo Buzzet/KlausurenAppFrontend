@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "cordova-prod": "ng build --prod --base-href . --output-path ./KlausurenApp/www/",
-    "cordova": "ng build --base-href . --output-path ./KlausurenApp/www/",
+    "cordova": "ng build --output-path ./KlausurenApp/www/",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",

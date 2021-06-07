@@ -14,10 +14,10 @@ import {IonicModule} from '@ionic/angular';
 
 @NgModule({
   declarations: [
-    LoginComponent,
     RegisterComponent,
     RegisterEmailSendComponent,
-    RegisterPasswordComponent
+    RegisterPasswordComponent,
+    LoginComponent
   ],
     imports: [
         CommonModule,
@@ -28,10 +28,10 @@ import {IonicModule} from '@ionic/angular';
         IonicModule
     ],
   exports: [
-    LoginComponent,
     RegisterComponent,
     RegisterEmailSendComponent,
-    RegisterPasswordComponent
+    RegisterPasswordComponent,
+    LoginComponent
   ]
 })
 export class LoginModule { }

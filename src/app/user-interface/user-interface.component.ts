@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, NgZone, OnInit} from '@angular/core';
 import {LoginService} from '../login-module/services/login.service';
 import {Router} from '@angular/router';
 
@@ -9,12 +9,12 @@ import {Router} from '@angular/router';
 })
 export class UserInterfaceComponent implements OnInit {
 
-  constructor(public loginService: LoginService, private router: Router) { }
+  constructor(public loginService: LoginService, private router: Router, private ngZone: NgZone) { }
 
   ngOnInit(): void {
     // Use matchMedia to check the user preference
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-
+    this.router.navigateByUrl('login');
     this.toggleDarkTheme(prefersDark.matches);
 
 // Listen for changes to the prefers-color-scheme media query
@@ -23,11 +23,6 @@ export class UserInterfaceComponent implements OnInit {
   toggleDarkTheme(shouldAdd): void {
     document.body.classList.toggle('darkMode', shouldAdd);
   }
-  isIPhoneCordovaApp(): boolean{
-    if (document.location.protocol === 'file:' && navigator.userAgent.toLocaleLowerCase().indexOf('iphone') !== -1){
-      return true;
-    }
-    return false;
-  }
+
 
 }
