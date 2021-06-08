@@ -27,4 +27,7 @@
 
     <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
     </platform>
+  <config-file parent="NSCameraUsageDescription" platform="ios" target="*-Info.plist">
+    <string>Takes photos of your exam</string>
+  </config-file>
 </widget>
