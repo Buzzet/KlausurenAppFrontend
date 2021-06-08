@@ -22,5 +22,6 @@
   </div>
     <button mat-raised-button color="primary" class="btn" [disabled]="btnKlausurDisable || !checkboxChecked" (click)="upload()">Klausur Hochladen</button>
   <app-success *ngIf="uploadSuccessfull" (click)="onClickSuccessMessage()"></app-success>
+  <app-failure *ngIf="uploadFailure" (click)="onClickFailureMessage()"></app-failure>
 </div>
 </ion-content>

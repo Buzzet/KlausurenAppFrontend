@@ -4284,6 +4284,7 @@ input {
   touch-action: manipulation;
 }
 ion-content{
+  position: static;
 }
 @media (prefers-color-scheme: dark) {
   /*

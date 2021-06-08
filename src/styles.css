@@ -34,7 +34,9 @@ input {
 .disable-dbl-tap-zoom {
   touch-action: manipulation;
 }
+
 ion-content{
+  position: static;
 }
 
 

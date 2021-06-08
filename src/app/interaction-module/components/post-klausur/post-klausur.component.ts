@@ -23,6 +23,7 @@ export class PostKlausurComponent implements OnInit {
   checkboxChecked = false;
   year: string;
   uploadSuccessfull = false;
+  uploadFailure = false;
   constructor(private klausrenAPI: KlausurenControllerService, private router: Router) { }
   ngOnInit(): void {
     this.fillDropDownYear();
@@ -42,6 +43,8 @@ export class PostKlausurComponent implements OnInit {
       this.dropDownSelection.modul, '', this.files[0], localStorage.getItem('klausuren-user')).subscribe(ele => {console.log(ele); }, error => {
         if (error?.status === 200){
           this.uploadSuccessfull = true;
+        } else {
+          this.uploadFailure = true;
         }
       }
     );
@@ -90,5 +93,12 @@ export class PostKlausurComponent implements OnInit {
   deleteFileArray(): void {
     console.log(this.files);
     this.files = undefined;
+  }
+
+  onClickFailureMessage(): void {
+    this.uploadFailure = false;
+    this.router.navigateByUrl('/RefreshComponent', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['post']);
+    });
   }
 }
