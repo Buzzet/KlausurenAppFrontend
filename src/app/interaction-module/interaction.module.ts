@@ -20,6 +20,7 @@ import {IonicModule} from '@ionic/angular';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { SuccessComponent } from './components/success/success.component';
 import { FailureComponent } from './components/failure/failure.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 
@@ -35,7 +36,8 @@ import { FailureComponent } from './components/failure/failure.component';
     KlausurInputSelectionComponent,
     PdfViewerComponent,
     SuccessComponent,
-    FailureComponent
+    FailureComponent,
+    ProfileComponent,
   ],
   imports: [
     CommonModule,
