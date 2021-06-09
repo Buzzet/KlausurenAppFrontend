@@ -1,0 +1,27 @@
+.body{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.logo{
+    height: 18vh;
+    width: 80vw;
+    background-color: #3f51b5;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+svg{
+    width: 70vw;
+}
+
+.text{
+    width: 80vw;
+    margin-top: 20vh;
+}

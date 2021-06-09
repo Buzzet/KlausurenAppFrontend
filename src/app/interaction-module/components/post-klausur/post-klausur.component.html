@@ -1,0 +1,27 @@
+<ion-content>
+<div class="body">
+  <klausur-dropdown-selection *ngIf="!newKlausur" (validInput)="setSelection($event)"></klausur-dropdown-selection>
+  <klausur-input-selection (output)="setSelection($event)" *ngIf="newKlausur"></klausur-input-selection>
+  <dropdown-list [list]="this.yearList" [disabled]="disableYear" [placeholder]="'Jahr'" (selectionChanged)="selectionChanged($event)"></dropdown-list>
+  <p *ngIf="!newKlausur">Klausur nicht in der Liste?</p>
+  <button mat-raised-button color="accent" class="btn" (click)="onClickNewKlausur()">{{newKlausur ? 'Klausur auswählen' : 'Selber eintragen'}}</button>
+    <div class="uploadBtn">
+      <label for="file-upload" class="custom-file-upload">
+        <mat-icon class="uploadIcon">upload_file</mat-icon>
+      </label>
+      <input id="file-upload" type="file" #fileInput (change)="onFileInput(fileInput.files)" style="display: none;"/>
+    </div>
+  <div *ngIf="files !== undefined && files.length > 0" class="files">
+    <p>{{files.item(0).name}}</p>
+    <button mat-icon-button color="warn" (click)="deleteFileArray()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+  <div class="checkbox">
+    <mat-checkbox class="example-margin" [(ngModel)]="checkboxChecked">Hiermit bestätige ich,<br> dass ich die Nutzungsrechte an der <br> hochgeladenen Klausur besitze.</mat-checkbox>
+  </div>
+    <button mat-raised-button color="primary" class="btn" [disabled]="btnKlausurDisable || !checkboxChecked" (click)="upload()">Klausur Hochladen</button>
+  <app-success *ngIf="uploadSuccessfull" (click)="onClickSuccessMessage()"></app-success>
+  <app-failure *ngIf="uploadFailure" (click)="onClickFailureMessage()"></app-failure>
+</div>
+</ion-content>

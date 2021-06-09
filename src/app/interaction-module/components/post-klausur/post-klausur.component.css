@@ -1,0 +1,70 @@
+.body{
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btn{
+    width: 70%;
+}
+
+.uploadBtn{
+    height: 70px;
+    width: 70px;
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+.uploadIcon{
+    font-size: 70px;
+}
+
+.custom-file-upload {
+   display: inline-block;
+   padding: 6px 12px;
+   cursor: pointer;
+ }
+
+.files{
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+}
+klausur-dropdown-selection{
+  width: 80%;
+}
+klausur-input-selection{
+  width: 80%;
+}
+p{
+  font-style: italic;
+}
+dropdown-list{
+  width: 80%;
+}
+.checkbox{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  justify-content: center;
+  align-items: center;
+}
+.checkbox>mat-checkbox{
+  word-wrap: break-word;
+}
+app-success{
+  position: absolute;
+}
+app-failure{
+  position: absolute;
+}
+
+@media only screen and (max-height: 375px) {
+  body {
+    background-color: lightblue;
+  }
+}

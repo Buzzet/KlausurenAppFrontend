@@ -1,0 +1,4 @@
+<mat-form-field class="form-field" >
+  <mat-label>{{this.label}}</mat-label>
+  <input matInput type="text" (blur)="this.value.emit(this.inputValue)" [(ngModel)]="this.inputValue" required>
+</mat-form-field>

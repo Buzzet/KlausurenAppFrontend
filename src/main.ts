@@ -8,5 +8,14 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+const bootstrap = () => {
+  platformBrowserDynamic().bootstrapModule(AppModule)
+    .catch(err => console.error(err));
+};
+
+if(typeof window['cordova'] !== 'undefined'){
+  document.addEventListener('deviceready', bootstrap, false);
+}else {
+  bootstrap();
+}
+

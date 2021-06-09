@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="de.jannikreinefeld.klausurenapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>KlausurenApp</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+      <icon density="ldpi" src="res/icon/android/ldpi.png"/>
+      <icon density="mdpi" src="res/icon/android/mdpi.png"/>
+      <icon density="hdpi" src="res/icon/android/hdpi.png"/>
+      <icon density="xhdpi" src="res/icon/android/xhdpi.png"/>
+      <icon density="xxhdpi" src="res/icon/android/xxhdpi.png"/>
+      <icon density="xxxhdpi" src="res/icon/android/xxxhdpi.png"/>
+    </platform>
+    <platform name="ios">
+      <icon src="res/icon/ios/icon-1024.png" width="1024" height="1024"/>
+      <icon src="res/icon/ios/icon-small.png" width="29" height="29"/>
+      <icon src="res/icon/ios/icon-small@2x.png" width="58" height="58"/>
+      <icon src="res/icon/ios/icon-small@3x.png" width="87" height="87"/>
+      <icon src="res/icon/ios/icon-small-40.png" width="40" height="40"/>
+      <icon src="res/icon/ios/icon-small-40@2x.png" width="80" height="80"/>
+      <icon src="res/icon/ios/icon-small-40@3x.png" width="120" height="120"/>
+      <icon src="res/icon/ios/icon-small-50.png" width="50" height="50"/>
+      <icon src="res/icon/ios/icon-small-50@2x.png" width="100" height="100"/>
+      <icon src="res/icon/ios/icon.png" width="57" height="57"/>
+      <icon src="res/icon/ios/icon@2x.png" width="114" height="114"/>
+      <icon src="res/icon/ios/icon-60.png" width="60" height="60"/>
+      <icon src="res/icon/ios/icon-60@2x.png" width="120" height="120"/>
+      <icon src="res/icon/ios/icon-60@3x.png" width="180" height="180"/>
+      <icon src="res/icon/ios/icon-72.png" width="72" height="72"/>
+      <icon src="res/icon/ios/icon-72@2x.png" width="144" height="144"/>
+      <icon src="res/icon/ios/icon-76.png" width="76" height="76"/>
+      <icon src="res/icon/ios/icon-76@2x.png" width="152" height="152"/>
+      <icon src="res/icon/ios/icon-167.png" width="167" height="167"/>
+      <icon src="res/icon/ios/icon-83.5@2x.png" width="167" height="167"/>
+    <preference name="WKWebViewOnly" value="true" />
+
+    <feature name="CDVWKWebViewEngine">
+        <param name="ios-package" value="CDVWKWebViewEngine" />
+    </feature>
+
+    <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
+    </platform>
+  <config-file parent="NSCameraUsageDescription" platform="ios" target="*-Info.plist">
+    <string>Takes photos of your exam</string>
+  </config-file>
+</widget>

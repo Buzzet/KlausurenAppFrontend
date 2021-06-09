@@ -1,0 +1,39 @@
+ .body{
+     width: 100vw;
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+   justify-content: center;
+   height: 100%;
+ }
+
+ .logo{
+     height: 18vh;
+     width: 80vw;
+     background-color: #3f51b5;
+     border-radius: 10px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+  .credentials{
+      width: 80vw;
+      height: 20vh;
+      margin-top: 8vh;
+  }
+
+  .loginInput{
+      width: 100%;
+
+   }
+
+   button{
+       width: 80vw;
+       height: 6vh;
+   }
+
+   .logoHAW{
+     width: 70%;
+     max-height: 90%;
+   }

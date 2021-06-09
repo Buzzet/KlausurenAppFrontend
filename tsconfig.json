@@ -7,6 +7,12 @@
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
+    "paths": {
+      "klausuren-api": [
+        "dist/klausuren-api/klausuren-api",
+        "dist/klausuren-api"
+      ]
+    },
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,

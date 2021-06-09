@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  klausurenService: 'http://87.237.54.34:8201',
+  emailValidationService: 'http://87.237.54.34:8202',
+  nutzerService: 'http://87.237.54.34:8203'
 };
 
 /*

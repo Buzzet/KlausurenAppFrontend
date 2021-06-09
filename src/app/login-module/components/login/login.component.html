@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="login.component.css">
+<ion-content>
+<div class="body">
+    <div class="logo">
+      <img class="logoHAW" src="assets/logo.svg" alt="logo klausurenapp"/>
+    </div>
+    <div class="credentials">
+
+        <mat-form-field class="loginInput">
+            <mat-label>E-Mail</mat-label>
+            <input matInput [(ngModel)]="mail" placeholder="Your HAW-Mail">
+          </mat-form-field>
+          <mat-form-field class="loginInput">
+            <mat-label>Password</mat-label>
+            <input [type]="hide ? 'password' : 'text'" [(ngModel)]="pw" matInput placeholder="Nicht dein HAW Passwort!">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" (click)="onClickLogin()">Login</button>
+    <button mat-raised-button style="margin-top: 2vh;" (click)="onClickRegister()">Registrieren</button>
+</div>
+</ion-content>

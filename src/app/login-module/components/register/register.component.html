@@ -1,0 +1,22 @@
+<ion-content>
+<div class=body>
+    <div class=logo>
+      <img class="logoHAW" src="assets/logo.svg" alt="logo klausurenapp"/>
+    </div>
+    <div class="disclaimer">
+        <p>Aus Datenschutzgründen ist das Registrieren nur mit einer gültigen HAW Email-Adresse möglich. Bitte geben Sie ihre Email Adresse ein und warten Sie auf unsere Bestätigungsemail.</p>
+    </div>
+
+    <div class="emailField">
+        <mat-form-field class="loginInput">
+            <mat-label>E-Mail</mat-label>
+            <input id="email" matInput [(ngModel)]="emailAddress"  placeholder="Deine HAW E-Mail" required>
+          </mat-form-field>
+          <p>@haw-hamburg.de</p>
+    </div>
+    <div *ngIf="validationFailed" class="alert">
+        <p>Nur HAW E-Mail Adressen erlaubt. Die Endung @haw-hamburg.de ist schon vorgegeben. Bitte gebe diese nicht noch mit an</p>
+    </div>
+    <button mat-raised-button color="primary" style="width: 80vw; margin-top: 4vh;" (click)="onClickRegister()">Registrieren</button>
+</div>
+</ion-content>
