@@ -18,6 +18,7 @@ import {IonicModule, IonicRouteStrategy} from '@ionic/angular';
 import { ApiModule } from 'projects/klausuren-api/src';
 import { LoginService } from './login-module/services/login.service';
 import {RouteReuseStrategy} from '@angular/router';
+import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 
 
 @NgModule({
@@ -41,7 +42,7 @@ import {RouteReuseStrategy} from '@angular/router';
     LoginModule,
     AppRoutingModule
   ],
-  providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
+  providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
