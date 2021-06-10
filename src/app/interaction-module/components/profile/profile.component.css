@@ -6,3 +6,7 @@
   align-items: center;
   flex-direction: column;
 }
+.version{
+  font-style: italic;
+  color: #7c7c7c;
+}
