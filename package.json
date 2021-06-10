@@ -6,6 +6,7 @@
     "cordova-prod": "ng build --prod --output-path ./KlausurenApp/www/",
     "cordova": "ng build --output-path ./KlausurenApp/www/",
     "start": "ng serve",
+    "build-prod": "ng build --prod",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
