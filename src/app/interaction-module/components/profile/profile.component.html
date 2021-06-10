@@ -1,7 +1,10 @@
 <ion-content>
   <div class="body">
-    <p>Eingeloggt als</p>
+    <p>Eingeloggt als:</p>
     <p>{{this.username}}</p>
     <button mat-raised-button color="warn" (click)="logout()">Logout</button>
+    <div class="version">
+      <p>Version: {{this.version}}</p>
+    </div>
   </div>
 </ion-content>
